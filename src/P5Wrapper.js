@@ -1,4 +1,5 @@
 import React from "react";
+import {DCEL} from "./DCEL";
 
 export class P5Wrapper extends React.Component {
     constructor(props) {
@@ -12,6 +13,9 @@ export class P5Wrapper extends React.Component {
 
         this.intersections = [];
         this.shapes = [];
+
+        this.poly1 = new DCEL();
+        this.poly1.addVertex(0, 1);
     }
 
     Sketch = (p) => {
@@ -130,6 +134,7 @@ function shuffle(a) {
 
 
 //TODO analyse two rings problem, should only take two of the four shapes given.
+//XOR
 function shapesFromChains(chains1, chains2) {
     //for every chain in chains1
     //check if any chain in chains2 has the same beginning and end as the chains1 chain
